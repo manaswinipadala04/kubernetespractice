@@ -4,7 +4,7 @@ services:
     container_name: mysql-db
     environment:
       MYSQL_ROOT_PASSWORD: docker
-      MYSQL_DATABASE: productpracticeedb
+      MYSQL_DATABASE: productprdb
     ports:
       - "3307:3306"
     volumes:
@@ -13,7 +13,7 @@ services:
       - springboot-mysql-net
 
   backend:
-    image: manaswinipadala04/gitactionspracticee:latest
+    image: manaswinipadala04/gitactionspra-backend:latest
     container_name: springboot
     ports:
       - "2050:2000"
@@ -24,7 +24,7 @@ services:
       - springboot-mysql-net
 
   frontend:
-    image: manaswinipadala04/gitactionspracticee:latest
+    image: manaswinipadala04/gitactionspra-frontend:latest
     container_name: react
     ports:
       - "2005:80"
